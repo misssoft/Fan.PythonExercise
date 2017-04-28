@@ -1,10 +1,10 @@
 """
-Read water depth from a csv file, which has one column of data. 
+Read water depth from a csv file, which has one column of data.
 The module reads the file into array.
 As a script, it prints out the number of records
 
 Script Example:
-    python depth_read.py depths.csv
+    python depth_read.py data\depths.csv
     7500
 
 """

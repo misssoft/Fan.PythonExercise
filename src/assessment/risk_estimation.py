@@ -5,7 +5,7 @@ The first contains the boundaries of bins.
 The second contains values of damage in different situations
 
 Script example:
-    python risk_estimation.py depths.csv
+    python risk_estimation.py data\depths.csv
     [81272.25]
 """
 
