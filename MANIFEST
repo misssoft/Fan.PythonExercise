@@ -3,4 +3,4 @@ setup.py
 src\assessment\binary_search_distribution.py
 src\assessment\depth_read.py
 src\assessment\risk_estimation.py
-src\assessment\data\deths.csv
+src\assessment\data\depths.csv
