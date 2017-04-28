@@ -11,10 +11,10 @@ Script example:
 
 import sys
 import numpy as np
-from binary_search_distribution import binary_search_distribution
-from depth_read import read_water_depths
+import assessment.estimate.binary_search_distribution as search
+import assessment.estimate.depth_read as read
 
-def main(filename):
+def estimate(filename):
     """
     Calcuate the risk value based on csv file of water depth
     :param filename: csv file name
@@ -23,16 +23,16 @@ def main(filename):
     boun = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     values = [0, 50000, 80000, 95000, 105000, 112500, 120000, 125000, 130000, 132500, 134000]
     probabilities = np.zeros((1, 11), dtype=np.float)
-    depths = read_water_depths(filename)
+    depths = read.read_water_depths(filename)
     num_p = len(depths)
     total_p = int(num_p/0.75) #total number of pixels in the area
 
     for i in range(0, num_p):
-        upper = binary_search_distribution(boun, depths[i], 0, len(boun))
+        upper = search.binary_search_distribution(boun, depths[i], 0, len(boun))
         probabilities[0, upper] += 1.0
     probabilities /= total_p
     risk = np.dot(probabilities, values)
     print(risk)
 
 if __name__ == '__main__':
-    main(sys.argv[1])
+    estimate(sys.argv[1])
