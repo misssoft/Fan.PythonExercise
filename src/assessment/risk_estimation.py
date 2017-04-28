@@ -14,7 +14,6 @@ import numpy as np
 from binary_search_distribution import binary_search_distribution
 from depth_read import read_water_depths
 
-
 def main(filename):
     """
     Calcuate the risk value based on csv file of water depth
