@@ -18,4 +18,4 @@ def binary_search_distribution(boundaries, depth, lower, upper):
             return binary_search_distribution(boundaries, depth, middle, upper)
         else:
             return binary_search_distribution(boundaries, depth, lower, middle)
-            
+
